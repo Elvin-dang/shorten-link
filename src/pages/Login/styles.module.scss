@@ -1,0 +1,162 @@
+.container {
+  display: flex;
+  grid-template-columns: 100%;
+  height: 100vh;
+  margin-left: 2.4rem;
+  margin-right: 2.4rem;
+  font-family: "Open Sans", sans-serif;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    width: 100%;
+    bottom: 1.6rem;
+    background-color: #f2f2f2;
+    padding: 3.2rem 1.6rem;
+    border-radius: 1.6rem;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(35, 0, 77, 0.2);
+    animation-duration: 0.4s;
+    animation-name: animate-login;
+
+    @keyframes animate-login {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+
+    .form {
+      width: 100%;
+
+      .title {
+        font-size: 3.2rem;
+        margin-bottom: 3.2rem;
+        text-align: center;
+        color: #9d4bff;
+      }
+
+      .box {
+        display: grid;
+        grid-template-columns: max-content 1fr max-content;
+        column-gap: 0.8rem;
+        padding: 1.8rem 1.6rem;
+        background-color: #fff;
+        margin-top: 1rem;
+        border-radius: 0.5rem;
+
+        &.error {
+          overflow: hidden;
+          max-width: 0;
+          padding: 0;
+          transition: max-width 0.5s;
+          background-color: rgb(255, 163, 163);
+          color: rgb(255, 38, 38);
+          font-weight: bolder;
+          text-align: start;
+    
+          &.show {
+            border: 1px solid red;
+            padding: 1.2rem 1rem;
+            max-width: 100%;
+          }
+        }
+
+        .input {
+          border: none;
+          outline: none;
+          font-size: 1.4rem;
+          font-weight: 700;
+          color: #23004d;
+
+          &::placeholder {
+            font-size: 1.4re,;
+            font-family: "Open Sans", sans-serif;
+            color: #a49eac;
+            letter-spacing: 1px;
+          }
+
+          &.password {
+            letter-spacing: 5px;
+          }
+        }
+
+        .icon {
+          font-size: 2.4rem;
+
+          & svg {
+            color: #9d4bff;
+          }
+        }
+
+        .icon_show_password {
+          font-size: 2rem;
+        }
+      }
+
+      .forgot {
+        display: block;
+        width: max-content;
+        margin-left: auto;
+        margin-top: 0.8rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #a49eac;
+        border: none;
+        cursor: pointer;
+        background-color: inherit;
+
+        &:hover {
+          color: royalblue;
+        }
+      }
+
+      .button_wrapper {
+        margin: 2.4rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        .button {
+          display: block;
+          padding: 1.6rem;
+          background-color: #9d4bff;
+          color: #fff;
+          font-weight: 600;
+          text-align: center;
+          border-radius: 0.8rem;
+          border: none;
+          width: 100%;
+          max-width: 100%;
+          transition: 0.3s;
+          font-size: 1.3rem;
+          height: 5.4rem;
+  
+          &:hover {
+            background-color: #23004d;
+          }
+  
+          &.loading {
+            max-width: 5.4rem;
+            border-radius: 50%;
+            background-color: #23004d;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1092px) {
+  .container {
+    .card {
+      width: 40%;
+    }
+  }
+}
